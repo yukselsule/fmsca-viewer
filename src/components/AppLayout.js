@@ -4,6 +4,7 @@ import Filters from "./Filters";
 import Header from "./Header";
 import Container from "@mui/material/Container";
 import Box from "@mui/material/Box";
+import Footer from "./Footer";
 
 function AppLayout() {
   return (
@@ -15,6 +16,7 @@ function AppLayout() {
           <DataTable />
         </Box>
       </Container>
+      <Footer />
     </div>
   );
 }
