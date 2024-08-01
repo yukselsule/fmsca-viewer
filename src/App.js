@@ -1,9 +1,15 @@
-import TableComponent from "./Table";
+import { FiltersProvider } from "./contexts/FilterContext";
+import { DataProvider } from "./contexts/DataContext";
+import AppLayout from "./components/AppLayout";
 
 function App() {
   return (
     <div className="App">
-      <TableComponent />
+      <DataProvider>
+        <FiltersProvider>
+          <AppLayout />
+        </FiltersProvider>
+      </DataProvider>
     </div>
   );
 }
