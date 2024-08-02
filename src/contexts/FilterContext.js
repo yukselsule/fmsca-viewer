@@ -2,21 +2,24 @@ import { createContext, useContext, useState } from "react";
 
 const FiltersContext = createContext();
 
+const initialFilters = {
+  created_dt: "",
+  data_source_modified_dt: "",
+  entity_type: "",
+  operating_status: "",
+  legal_name: "",
+  dba_name: "",
+  physical_address: "",
+  phone: "",
+  usdot_number: "",
+  mc_mx_ff_number: "",
+  power_units: "",
+  out_of_service_date: "",
+};
+
 function FiltersProvider({ children }) {
-  const [filters, setFilters] = useState({
-    created_dt: "",
-    data_source_modified_dt: "",
-    entity_type: "",
-    operating_status: "",
-    legal_name: "",
-    dba_name: "",
-    physical_address: "",
-    phone: "",
-    usdot_number: "",
-    mc_mx_ff_number: "",
-    power_units: "",
-    out_of_service_date: "",
-  });
+  const [filters, setFilters] = useState(initialFilters);
+
   const handleFilterChange = (event) => {
     setFilters({
       ...filters,
@@ -24,9 +27,13 @@ function FiltersProvider({ children }) {
     });
   };
 
+  const resetFilters = () => {
+    setFilters(initialFilters);
+  };
+
   return (
     <FiltersContext.Provider
-      value={{ filters, setFilters, handleFilterChange }}
+      value={{ filters, setFilters, handleFilterChange, resetFilters }}
     >
       {children}
     </FiltersContext.Provider>

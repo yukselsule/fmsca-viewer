@@ -1,5 +1,5 @@
 import React from "react";
-import { TextField, Box, Typography } from "@mui/material";
+import { TextField, Box, Typography, Button } from "@mui/material";
 import { useFilters } from "../contexts/FilterContext";
 
 const labelMapping = {
@@ -18,7 +18,7 @@ const labelMapping = {
 };
 
 function Filters() {
-  const { filters, handleFilterChange } = useFilters();
+  const { filters, handleFilterChange, resetFilters } = useFilters();
 
   return (
     <Box
@@ -34,7 +34,7 @@ function Filters() {
       <Typography
         variant="h6"
         gutterBottom
-        sx={{ color: "#090909", fontSize: "0.7rem" }}
+        sx={{ color: "#090909", fontSize: "1rem" }}
       >
         Filters
       </Typography>
@@ -63,6 +63,11 @@ function Filters() {
             sx={{ minWidth: { xs: "100%", sm: 200 }, flexGrow: 1 }}
           />
         ))}
+      </Box>
+      <Box sx={{ display: "flex", justifyContent: "flex-end", marginTop: 2 }}>
+        <Button variant="contained" color="primary" onClick={resetFilters}>
+          Reset Filters
+        </Button>
       </Box>
     </Box>
   );
