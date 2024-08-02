@@ -13,7 +13,7 @@ function Header() {
         <Box
           component="img"
           sx={{
-            height: 45,
+            height: { xs: 30, sm: 35, md: 40 },
           }}
           alt="Logo"
           src={logo}
