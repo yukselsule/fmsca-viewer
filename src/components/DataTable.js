@@ -39,11 +39,13 @@ function DataTable() {
     setPage(0);
   }, [filters]);
 
-  const handleChangePage = useCallback((event, newPage) => {
-    setPage(newPage);
-    setLoading(true);
-    setLoading(false);
-  }, []);
+  const handleChangePage = useCallback(
+    (event, newPage) => {
+      setPage(newPage);
+      setLoading(false);
+    },
+    [setLoading]
+  );
 
   const handleChangeRowsPerPage = useCallback((event) => {
     setRowsPerPage(parseInt(event.target.value, 10));
