@@ -4,7 +4,7 @@ import IconButton from "@mui/material/IconButton";
 import MenuIcon from "@mui/icons-material/Menu";
 import Box from "@mui/material/Box";
 
-import logo from "./../logo.png";
+import logo from "./../logo.webp";
 
 function Header() {
   return (
