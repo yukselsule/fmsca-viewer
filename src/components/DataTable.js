@@ -18,9 +18,9 @@ import { useData } from "../contexts/DataContext";
 
 function DataTable() {
   const { filters } = useFilters();
-  const { data, loading, setLoading } = useData();
+  const { data, loading } = useData();
   const [page, setPage] = useState(0);
-  const [rowsPerPage, setRowsPerPage] = useState(10);
+  const [rowsPerPage, setRowsPerPage] = useState(20);
 
   const filteredData = useMemo(() => {
     if (loading) return [];
@@ -39,13 +39,9 @@ function DataTable() {
     setPage(0);
   }, [filters]);
 
-  const handleChangePage = useCallback(
-    (event, newPage) => {
-      setPage(newPage);
-      setLoading(false);
-    },
-    [setLoading]
-  );
+  const handleChangePage = useCallback((event, newPage) => {
+    setPage(newPage);
+  }, []);
 
   const handleChangeRowsPerPage = useCallback((event) => {
     setRowsPerPage(parseInt(event.target.value, 10));

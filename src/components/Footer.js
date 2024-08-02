@@ -82,6 +82,7 @@ function Footer() {
           component={Link}
           href="https://www.facebook.com/FMCSA/"
           target="_blank"
+          name="Facebook link to FMSCA"
           rel="noopener noreferrer"
           sx={{ color: "white" }}
         >
@@ -91,6 +92,7 @@ function Footer() {
           component={Link}
           href="https://twitter.com/FMCSA"
           target="_blank"
+          name="Twitter link to FMSCA"
           rel="noopener noreferrer"
           sx={{ color: "white" }}
         >
@@ -100,6 +102,7 @@ function Footer() {
           component={Link}
           href="https://www.instagram.com/dot_fmcsa/"
           target="_blank"
+          name="Instagram link to FMSCA"
           rel="noopener noreferrer"
           sx={{ color: "white" }}
         >
@@ -109,6 +112,7 @@ function Footer() {
           component={Link}
           href="https://www.youtube.com/user/usdotgov"
           target="_blank"
+          name="Youtube link to FMSCA"
           rel="noopener noreferrer"
           sx={{ color: "white" }}
         >
