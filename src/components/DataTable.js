@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import React, { useMemo, useState, useCallback, useEffect } from "react";
 import {
   Table,
   TableBody,
@@ -21,45 +21,34 @@ function DataTable() {
   const { data, loading, setLoading } = useData();
   const [page, setPage] = useState(0);
   const [rowsPerPage, setRowsPerPage] = useState(10);
-  const [filteredData, setFilteredData] = useState([]);
 
-  const [isLoading, setIsLoading] = useState(true);
-
-  useEffect(() => {
-    if (!loading) {
-      const newFilteredData = data.filter((row) =>
-        Object.keys(filters).every((key) => {
-          if (!filters[key]) return true;
-          return row[key]
-            ?.toString()
-            .toLowerCase()
-            .includes(filters[key].toLowerCase());
-        })
-      );
-      setFilteredData(newFilteredData);
-      setTimeout(() => setIsLoading(false), 3000);
-    }
+  const filteredData = useMemo(() => {
+    if (loading) return [];
+    return data.filter((row) =>
+      Object.keys(filters).every((key) => {
+        if (!filters[key]) return true;
+        return row[key]
+          ?.toString()
+          .toLowerCase()
+          .includes(filters[key].toLowerCase());
+      })
+    );
   }, [filters, data, loading]);
 
   useEffect(() => {
     setPage(0);
   }, [filters]);
 
-  const handleChangePage = (event, newPage) => {
+  const handleChangePage = useCallback((event, newPage) => {
     setPage(newPage);
     setLoading(true);
-    setTimeout(() => {
-      const start = newPage * rowsPerPage;
-      const end = start + rowsPerPage;
-      setFilteredData(data.slice(start, end));
-      setLoading(false);
-    }, 500);
-  };
+    setLoading(false);
+  }, []);
 
-  const handleChangeRowsPerPage = (event) => {
+  const handleChangeRowsPerPage = useCallback((event) => {
     setRowsPerPage(parseInt(event.target.value, 10));
     setPage(0);
-  };
+  }, []);
 
   return (
     <Box sx={{ padding: 2 }}>
@@ -106,7 +95,7 @@ function DataTable() {
             </TableRow>
           </TableHead>
           <TableBody>
-            {isLoading ? (
+            {loading ? (
               <TableRow>
                 <TableCell colSpan={12}>
                   <Box
@@ -203,4 +192,4 @@ function DataTable() {
   );
 }
 
-export default DataTable;
+export default React.memo(DataTable);

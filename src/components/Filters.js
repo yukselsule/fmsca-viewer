@@ -1,3 +1,4 @@
+import React from "react";
 import { TextField, Box, Typography } from "@mui/material";
 import { useFilters } from "../contexts/FilterContext";
 
@@ -67,4 +68,4 @@ function Filters() {
   );
 }
 
-export default Filters;
+export default React.memo(Filters);
