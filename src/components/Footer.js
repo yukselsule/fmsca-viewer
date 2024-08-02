@@ -11,15 +11,17 @@ function Footer() {
       sx={{
         display: "flex",
         justifyContent: "space-between",
-        alignItems: "center",
+        alignItems: { xs: "flex-start", sm: "flex-start", md: "center" },
         backgroundColor: "#15396c",
         color: "white",
         padding: 7,
         borderTop: "1px solid #ddd",
-        flexDirection: { xs: "column", sm: "row" },
+        flexDirection: { xs: "column", sm: "column", md: "row" },
+        gap: { xs: 2, sm: 2, md: 0 },
+        textAlign: { xs: "left", sm: "left", md: "left" },
       }}
     >
-      <Box sx={{ flex: 1 }}>
+      <Box sx={{ flex: 1, mb: { xs: 2, sm: 2, md: 0 } }}>
         <Typography variant="body1" align="left" sx={{ mb: 1 }}>
           U.S. DEPARTMENT OF TRANSPORTATION
         </Typography>
@@ -66,7 +68,11 @@ function Footer() {
           display: "flex",
           alignItems: "center",
           gap: 1,
-          mt: { xs: 2, sm: 0 },
+          justifyContent: {
+            xs: "flex-start",
+            sm: "flex-start",
+            md: "flex-start",
+          },
         }}
       >
         <Typography variant="body1" sx={{ mr: 1 }}>

@@ -1,5 +1,4 @@
 import { TextField, Box, Typography } from "@mui/material";
-
 import { useFilters } from "../contexts/FilterContext";
 
 const labelMapping = {
@@ -31,10 +30,24 @@ function Filters() {
         marginBottom: 3,
       }}
     >
-      <Typography variant="h6" gutterBottom sx={{ color: "#090909" }}>
+      <Typography
+        variant="h6"
+        gutterBottom
+        sx={{ color: "#090909", fontSize: "0.7rem" }}
+      >
         Filters
       </Typography>
-      <Box sx={{ display: "flex", flexWrap: "wrap", gap: 2 }}>
+      <Box
+        sx={{
+          display: "grid",
+          gridTemplateColumns: {
+            xs: "1fr",
+            sm: "1fr 1fr",
+            md: "1fr 1fr 1fr 1fr",
+          },
+          gap: 2,
+        }}
+      >
         {Object.keys(filters).map((key) => (
           <TextField
             key={key}
@@ -44,6 +57,8 @@ function Filters() {
             onChange={handleFilterChange}
             variant="outlined"
             size="small"
+            InputLabelProps={{ style: { fontSize: "0.7rem" } }}
+            inputProps={{ style: { fontSize: "0.7rem" } }}
             sx={{ minWidth: { xs: "100%", sm: 200 }, flexGrow: 1 }}
           />
         ))}

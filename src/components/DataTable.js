@@ -67,18 +67,42 @@ function DataTable() {
         <Table>
           <TableHead sx={{ backgroundColor: "#99c9e6" }}>
             <TableRow>
-              <TableCell sx={{ width: "10%" }}>Created Date</TableCell>
-              <TableCell sx={{ width: "10%" }}>Modified Date</TableCell>
-              <TableCell sx={{ width: "10%" }}>Entity</TableCell>
-              <TableCell sx={{ width: "10%" }}>Operating Status</TableCell>
-              <TableCell sx={{ width: "10%" }}>Legal Name</TableCell>
-              <TableCell sx={{ width: "10%" }}>DBA Name</TableCell>
-              <TableCell sx={{ width: "10%" }}>Physical Address</TableCell>
-              <TableCell sx={{ width: "10%" }}>Phone</TableCell>
-              <TableCell sx={{ width: "10%" }}>USDOT</TableCell>
-              <TableCell sx={{ width: "10%" }}>MC/MX/FF Number</TableCell>
-              <TableCell sx={{ width: "5%" }}>Power Units</TableCell>
-              <TableCell sx={{ width: "10%" }}>Out of Service Date</TableCell>
+              <TableCell sx={{ width: "10%", fontSize: "0.8rem" }}>
+                Created Date
+              </TableCell>
+              <TableCell sx={{ width: "10%", fontSize: "0.8rem" }}>
+                Modified Date
+              </TableCell>
+              <TableCell sx={{ width: "10%", fontSize: "0.8rem" }}>
+                Entity
+              </TableCell>
+              <TableCell sx={{ width: "10%", fontSize: "0.8rem" }}>
+                Operating Status
+              </TableCell>
+              <TableCell sx={{ width: "10%", fontSize: "0.8rem" }}>
+                Legal Name
+              </TableCell>
+              <TableCell sx={{ width: "10%", fontSize: "0.8rem" }}>
+                DBA Name
+              </TableCell>
+              <TableCell sx={{ width: "10%", fontSize: "0.8rem" }}>
+                Physical Address
+              </TableCell>
+              <TableCell sx={{ width: "10%", fontSize: "0.8rem" }}>
+                Phone
+              </TableCell>
+              <TableCell sx={{ width: "10%", fontSize: "0.8rem" }}>
+                USDOT
+              </TableCell>
+              <TableCell sx={{ width: "10%", fontSize: "0.8rem" }}>
+                MC/MX/FF Number
+              </TableCell>
+              <TableCell sx={{ width: "5%", fontSize: "0.8rem" }}>
+                Power Units
+              </TableCell>
+              <TableCell sx={{ width: "10%", fontSize: "0.8rem" }}>
+                Out of Service Date
+              </TableCell>
             </TableRow>
           </TableHead>
           <TableBody>
@@ -108,7 +132,7 @@ function DataTable() {
                       minHeight: "400px",
                     }}
                   >
-                    <Typography variant="h6">
+                    <Typography variant="h6" sx={{ fontSize: "0.8rem" }}>
                       There are no results for your filters.
                     </Typography>
                   </Box>
@@ -124,36 +148,40 @@ function DataTable() {
                       backgroundColor: index % 2 === 0 ? "#f5f5f5" : "#e0e0e0",
                     }}
                   >
-                    <TableCell sx={{ width: "10%" }}>
+                    <TableCell sx={{ width: "10%", fontSize: "0.7rem" }}>
                       {row.created_dt}
                     </TableCell>
-                    <TableCell sx={{ width: "10%" }}>
+                    <TableCell sx={{ width: "10%", fontSize: "0.7rem" }}>
                       {row.data_source_modified_dt}
                     </TableCell>
-                    <TableCell sx={{ width: "10%" }}>
+                    <TableCell sx={{ width: "10%", fontSize: "0.7rem" }}>
                       {row.entity_type}
                     </TableCell>
-                    <TableCell sx={{ width: "10%" }}>
+                    <TableCell sx={{ width: "10%", fontSize: "0.7rem" }}>
                       {row.operating_status}
                     </TableCell>
-                    <TableCell sx={{ width: "10%" }}>
+                    <TableCell sx={{ width: "10%", fontSize: "0.7rem" }}>
                       {row.legal_name}
                     </TableCell>
-                    <TableCell sx={{ width: "10%" }}>{row.dba_name}</TableCell>
-                    <TableCell sx={{ width: "10%" }}>
+                    <TableCell sx={{ width: "10%", fontSize: "0.7rem" }}>
+                      {row.dba_name}
+                    </TableCell>
+                    <TableCell sx={{ width: "10%", fontSize: "0.7rem" }}>
                       {row.physical_address}
                     </TableCell>
-                    <TableCell sx={{ width: "10%" }}>{row.phone}</TableCell>
-                    <TableCell sx={{ width: "10%" }}>
+                    <TableCell sx={{ width: "10%", fontSize: "0.7rem" }}>
+                      {row.phone}
+                    </TableCell>
+                    <TableCell sx={{ width: "10%", fontSize: "0.7rem" }}>
                       {row.usdot_number}
                     </TableCell>
-                    <TableCell sx={{ width: "10%" }}>
+                    <TableCell sx={{ width: "10%", fontSize: "0.7rem" }}>
                       {row.mc_mx_ff_number}
                     </TableCell>
-                    <TableCell sx={{ width: "5%" }}>
+                    <TableCell sx={{ width: "5%", fontSize: "0.7rem" }}>
                       {row.power_units}
                     </TableCell>
-                    <TableCell sx={{ width: "10%" }}>
+                    <TableCell sx={{ width: "10%", fontSize: "0.7rem" }}>
                       {row.out_of_service_date}
                     </TableCell>
                   </TableRow>
